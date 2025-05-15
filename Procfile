@@ -1,1 +1,1 @@
-web: gunicorn ministry.wsgi --log-file -
+web: gunicorn ministry.wsgi:application --log-file -

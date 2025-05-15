@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ activity.title }}{% endblock %}
+
+{% block content %}
+    <style>
+
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain; /* ← يعرض الصورة كاملة بدون قص */
+    background-color: #f8f9fa; /* خلفية فاتحة في حال كانت الصورة صغيرة */
+}
+    </style>
+<div class="container my-5">
+    <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+        <!-- الصورة الكبيرة في الأعلى -->
+{% if activity.image %}
+    <img src="{{ activity.image.url }}" class="card-img-top img-fluid" alt="{{ activity.title }}">
+{% endif %}
+
+        <!-- محتوى البطاقة -->
+        <div class="card-body p-5 bg-light">
+            <h1 class="card-title mb-4 text-primary">{{ activity.title }}</h1>
+
+            <p class="card-text fs-5 lead">{{ activity.description }}</p>
+
+            <hr class="my-4">
+
+            <div class="d-flex justify-content-between align-items-center mt-4">
+                <span class="text-muted">
+                    <i class="bi bi-calendar-event"></i> {{ activity.date }}
+                </span>
+                <a href="{% url 'activities' %}" class="btn btn-outline-secondary btn-lg rounded-pill px-4">
+                    ← العودة إلى القائمة
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

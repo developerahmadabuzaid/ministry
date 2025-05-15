@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} - الوزارة الخارجية</title>
+    
+    <!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        .navbar-nav .nav-link {
+            color: #333 !important;
+            font-weight: 500;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #0d6efd !important;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 30px 0;
+            border-top: 1px solid #e7e7e7;
+            margin-top: 50px;
+        }
+        .footer h5 {
+            font-weight: bold;
+        }
+
+
+    </style>
+
+    <!-- Google Fonts (مثال: Tajawal للغة العربية) -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal :wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white text-right">
+
+<div class="container-fluid">
+    <!-- الصورة العلوية -->
+    <div class="text-center my-4">
+        <img src="{% static 'images/logo.png' %}" 
+             alt="شعار الوزارة" 
+             style="width: 400px; height: auto;" 
+             class="img-fluid rounded shadow-sm">
+    </div>
+
+    <!-- التبويبات -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 rounded shadow-sm">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">السياسة الخارجية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'strategies' %}">استراتيجية السياسة الخارجية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'activities' %}">نشاطات وزير الخارجية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'statements' %}">الرؤيا والرسالة</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">تواصل معنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- محتوى الصفحة -->
+    <div class="row">
+        <div class="col-md-12">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>عن الوزارة</h5>
+                    <p>الوزارة الخارجية هي الجهة المسؤولة عن العلاقات الدولية ومتابعة الشؤون الدبلوماسية.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'home' %}" class="text-decoration-none text-dark">الرئيسية</a></li>
+                        <li><a href="{% url 'strategies' %}" class="text-decoration-none text-dark">استراتيجية السياسة الخارجية</a></li>
+                        <li><a href="{% url 'contact' %}" class="text-decoration-none text-dark">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>بيانات الاتصال</h5>
+                    <p><strong>العنوان:</strong> وزاره الخارجية وشؤون المغتربين / مرج الحمام / طريق المطار</p>
+                    <p><strong>الهاتف:</strong> 5501444 6 00962</p>
+                    <p><strong>البريد الإلكتروني:</strong> op.ctr@fm.gov.jo</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; {{ "now"|date:"Y" }} الوزارة الخارجية. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+<script>
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault(); // يمنع ظهور القائمة
+});
+
+document.addEventListener('copy', function(e) {
+    e.preventDefault(); // منع عملية النسخ
+    alert('غير مسموح بنسخ المحتوى');
+});
+</script>
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

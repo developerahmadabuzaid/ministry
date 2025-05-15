@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}عن الوزارة الخارجية{% endblock %}
+{% block content %}
+<div class="container mt-5 mb-5">
+    <!-- قسم القيم الجوهرية -->
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 text-center">
+            <h2 class="mb-4">القيم الجوهرية</h2>
+            <p class="lead mb-5">هذه القيم تمثل ركائز العمل في الوزارة الخارجية الأردنية:</p>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-light"><strong>الانتماء والولاء</strong></li>
+                <li class="list-group-item bg-light"><strong>الحاكمية المؤسسية</strong></li>
+                <li class="list-group-item bg-light"><strong>التواصل والحوار والشراكة</strong></li>
+                <li class="list-group-item bg-light"><strong>المبادرة والريادة</strong></li>
+                <li class="list-group-item bg-light"><strong>التميز والإبداع</strong></li>
+                <li class="list-group-item bg-light"><strong>النزاهة والشفافية</strong></li>
+                <li class="list-group-item bg-light"><strong>المسؤولية والالتزام</strong></li>
+                <li class="list-group-item bg-light"><strong>العمل بروح الفريق</strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- قسم الرسالة -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8 col-lg-6 text-center">
+            <h2 class="mb-4">الرسالة</h2>
+            <p class="lead mb-5">تحقيق أهداف السياسة الخارجية الأردنية، وحماية المصالح الوطنية والمحافظة على مكتسباتها، وتعزيز دور المملكة ومكانتها إقليمياً ودولياً، وخدمة الاقتصاد الوطني، والمساهمة الفاعلة في تحقيق الأمن والاستقرار في المنطقة، وتجذير مفاهيم العدل والسلام في السياسة الدولية.</p>
+        </div>
+    </div>
+
+    <!-- قسم الرؤية -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8 col-lg-6 text-center">
+            <h2 class="mb-4">الرؤية</h2>
+            <p class="lead mb-5">سياسة خارجية أردنية متميزة إقليمياً ودولياً لخدمة وتحقيق المصالح الوطنية والعربية.</p>
+        </div>
+    </div>
+
+    <!-- قسم نص خطاب الملك -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8 col-lg-6 text-center">
+            <img src="{% static 'images/image.png' %}" alt="خطاب الملك" class="img-fluid rounded shadow-sm">
+            <p class="text-muted mt-3">خطاب العرش السامي في افتتاح الدورة العادية الأولى لمجلس الأمة العشرين - 18-11-2024</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

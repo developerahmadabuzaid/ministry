@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}استراتيجيات السياسة الخارجية{% endblock %}
+
+{% block content %}
+<!-- استيراد خط جميل -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- تنسيق مخصص -->
+<style>
+  body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #f4f6f8;
+  }
+
+  .video-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .video-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+  }
+
+  .video-js {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+</style>
+
+<!-- محتوى الصفحة -->
+<div class="video-container">
+  <h1>استراتيجيات السياسة الخارجية</h1>
+  <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet" />
+  
+  <video id="my-video" class="video-js" controls preload="auto" width="650" height="400" data-setup="{}">
+    <source src="{% static 'video/str.mp4' %}" type="video/mp4" />
+    عذرًا، لا يدعم متصفحك تشغيل هذا الفيديو.
+  </video>
+
+  <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
+</div>
+{% endblock %}

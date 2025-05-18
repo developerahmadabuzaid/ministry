@@ -6,7 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # أمان المشروع
 SECRET_KEY = 'django-insecure-p8!n*im57=e4w!238a_v-+70%q&bcx!@a7i^aq(c=7n_g_sbcm'  # ⚠️ في الإنتاج ضعها في متغير بيئة
-DEBUG = False  # مهم تعطيل التصحيح في الإنتاج
+DEBUG = True  # مهم تعطيل التصحيح في الإنتاج
 
 ALLOWED_HOSTS = ['*']  # أو ضع نطاق موقعك من Render فقط
 
